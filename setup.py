@@ -2,6 +2,7 @@
 
 from setuptools import setup
 
+
 setup(
     name = 'plover_python_dictionary',
     version = '0.5.1',
@@ -37,4 +38,3 @@ setup(
     ''',
     zip_safe = True,
 )
-
