@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name = 'plover_python_dictionary',
-    version = '0.5.1',
+    version = '0.5.2',
     description = 'Python dictionaries support for Plover',
     author = 'Benoit Pierre',
     author_email = 'benoit.pierre@gmail.com',
