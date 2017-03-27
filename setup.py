@@ -10,6 +10,7 @@ setup(
     author = 'Benoit Pierre',
     author_email = 'benoit.pierre@gmail.com',
     license = 'GNU General Public License v2 or later (GPLv2+)',
+    url = 'https://github.com/benoit-pierre/plover_python_dictionary',
     classifiers = [
         'Development Status :: 4 - Beta',
         'Environment :: Plugins',
