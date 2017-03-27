@@ -14,7 +14,7 @@ setup(
         'Development Status :: 4 - Beta',
         'Environment :: Plugins',
         'Intended Audience :: End Users/Desktop'
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
