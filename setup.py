@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 __requires__ = '''
-setuptools>=30.3.0
+setuptools>=34.4.0
 '''
 
 from setuptools import setup
