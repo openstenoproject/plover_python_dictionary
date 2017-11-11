@@ -9,6 +9,8 @@ from plover import resource
 
 class PythonDictionary(StenoDictionary):
 
+    readonly = True
+
     def __init__(self):
         super(PythonDictionary, self).__init__()
         self._mod = None
