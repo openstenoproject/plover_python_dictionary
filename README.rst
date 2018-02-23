@@ -1,5 +1,13 @@
-Add support for Python dictionaries to Plover. A Python dictionary is
-simply a single module with the following API:
+Plover Python dictionary
+========================
+
+Add support for Python dictionaries to Plover.
+
+
+Usage
+-----
+
+A Python dictionary is simply a single module with the following API:
 
 .. code:: python
 
@@ -37,3 +45,11 @@ If you stroke ``STR*``, then the next stroke will be shown verbatim
 (untranslated), e.g.
 ``-T STROEBG TP-R KW-GS STROEBG KR-GS S STR* STROEBG`` outputs:
 ``the stroke for "stroke" is STROEBG``.
+
+Release history
+---------------
+
+0.5.9
+~~~~~
+
+* update to Plover's latest API
