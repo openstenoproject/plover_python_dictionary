@@ -49,6 +49,11 @@ If you stroke ``STR*``, then the next stroke will be shown verbatim
 Release history
 ---------------
 
+In development
+~~~~~~~~~~~~~~
+
+* fix `./setup.py test` handling
+
 0.5.9
 ~~~~~
 
