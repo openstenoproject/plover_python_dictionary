@@ -25,7 +25,7 @@ A Python dictionary is simply a single module with the following API:
     def reverse_lookup(text):
         return []
 
-For example with the following dictionary:
+For example save the following code to ``show_stroke.py``:
 
 .. code:: python
 
@@ -41,10 +41,11 @@ For example with the following dictionary:
             return ' '
         return key[1]
 
-If you stroke ``STR*``, then the next stroke will be shown verbatim
-(untranslated), e.g.
-``-T STROEBG TP-R KW-GS STROEBG KR-GS S STR* STROEBG`` outputs:
-``the stroke for "stroke" is STROEBG``.
+Then add it to your dictionaries stack as you would a normal dictionary.
+
+Now, if you stroke ``STR*``, then the next stroke will be shown verbatim
+(untranslated), e.g. ``-T STROEBG TP-R KW-GS STROEBG KR-GS S STR* STROEBG``
+outputs: ``the stroke for "stroke" is STROEBG``.
 
 Release history
 ---------------
