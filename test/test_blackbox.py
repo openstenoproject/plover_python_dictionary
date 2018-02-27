@@ -73,7 +73,7 @@ class BlackboxTest(unittest.TestCase):
         self.assertEqual(d.get(('STR',)), None)
         self.assertEqual(d[('STR*', 'STR')], 'STR')
         self.assertEqual(d.get(('STR*', 'STR')), 'STR')
-        self.assertEqual(d.reverse_lookup('STR'), ())
+        self.assertEqual(d.reverse_lookup('STR'), [])
         self.dictionary.set_dicts([d] + self.dictionary.dicts)
         self.dictionary.set(normalize_steno('STR'), u'center')
         for steno in (

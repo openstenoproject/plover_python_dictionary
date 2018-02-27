@@ -31,7 +31,7 @@ class PythonDictionary(StenoDictionary):
         self._lookup = getattr(mod, 'lookup', None)
         if not isinstance(self._lookup, type(lambda x: x)):
             raise ValueError('missing or invalid `lookup\' function: %s\n' % str(lookup))
-        self._reverse_lookup = getattr(mod, 'reverse_lookup', lambda x: ())
+        self._reverse_lookup = getattr(mod, 'reverse_lookup', lambda x: [])
         if not isinstance(self._reverse_lookup, type(lambda x: x)):
             raise ValueError('invalid `reverse_lookup\' function: %s\n' % str(reverse_lookup))
         self._mod = mod
