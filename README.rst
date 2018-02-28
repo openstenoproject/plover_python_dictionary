@@ -50,8 +50,8 @@ outputs: ``the stroke for "stroke" is STROEBG``.
 Release history
 ---------------
 
-In development
-~~~~~~~~~~~~~~
+0.5.10
+~~~~~~
 
 * fix `./setup.py test` handling
 * fix default implementation of `reverse_lookup` to return a list (not a tuple)
