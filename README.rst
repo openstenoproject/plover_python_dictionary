@@ -54,6 +54,7 @@ In development
 ~~~~~~~~~~~~~~
 
 * fix `./setup.py test` handling
+* fix default implementation of `reverse_lookup` to return a list (not a tuple)
 
 0.5.9
 ~~~~~
