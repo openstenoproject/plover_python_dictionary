@@ -36,9 +36,6 @@ class CaptureOutput(object):
     def send_engine_command(self, c):
         self.instructions.append(('e', c))
 
-        dictionary = StenoDictionary()
-        dictionary.save = lambda: None
-        self.dictionary.set_dicts([dictionary])
 
 def steno_to_stroke(steno):
     stroke = Stroke(())
