@@ -47,6 +47,10 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ## Release history
 
+### 0.5.12
+
+* update changelog...
+
 ### 0.5.11
 
 * drop support for Python < 3.6
