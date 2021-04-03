@@ -12,7 +12,7 @@ class PythonDictionary(StenoDictionary):
     readonly = True
 
     def __init__(self):
-        super(PythonDictionary, self).__init__()
+        super().__init__()
         self._mod = None
         self._lookup = None
         self._reverse_lookup = None
