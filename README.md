@@ -47,6 +47,13 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ## Release history
 
+### 0.5.11
+
+* drop support for Python < 3.6
+* fix use of deprecated `imp` module
+* rework tests to use `plover_build_utils.testing`
+* use PEP 517/518
+
 ### 0.5.10
 
 * fix `./setup.py test` handling
