@@ -15,7 +15,7 @@ class PythonDictionary(StenoDictionary):
         self.readonly = True
 
     def _load(self, filename):
-        with open(filename) as fp:
+        with open(filename, encoding='utf-8') as fp:
             source = fp.read()
         mod = {}
         exec(source, mod)

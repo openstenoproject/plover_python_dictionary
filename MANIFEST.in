@@ -1,3 +1,4 @@
 include test/show_stroke.py
+include test/utf8_dict.py
 include pyproject.toml
 include tox.ini

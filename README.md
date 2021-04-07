@@ -5,7 +5,7 @@ Add support for Python dictionaries to Plover.
 
 ## Usage
 
-A Python dictionary is simply a single module with the following API:
+A Python dictionary is simply a single UTF-8 source file with the following API:
 
 ``` python
 # Length of the longest supported key (number of strokes).
@@ -24,6 +24,8 @@ def reverse_lookup(text):
 ```
 
 For example save the following code to `show_stroke.py`:
+
+> **Note**: make sure the file encoding is UTF-8!
 
 ``` python
 LONGEST_KEY = 2
@@ -45,7 +47,13 @@ Now, if you stroke `STR*`, then the next stroke will be shown verbatim
 (untranslated), e.g. `-T STROEBG TP-R KW-GS STROEBG KR-GS S STR* STROEBG`
 outputs: `the stroke for "stroke" is STROEBG`.
 
+
 ## Release history
+
+### *[unreleased]*
+
+* fix possible encoding issue when loading a dictionary:
+  from now on, assume and force UTF-8
 
 ### 0.5.12
 

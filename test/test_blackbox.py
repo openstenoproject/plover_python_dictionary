@@ -51,3 +51,11 @@ def test_python_dictionary():
         stroke = steno_to_stroke(steno)
         translator.translate(stroke)
     assert output.text == ' center STR center'
+
+
+# Check on Python 3.6!
+def test_utf8_dictionary(monkeypatch):
+    monkeypatch.setenv('PYTHONIOENCODING', 'ascii')
+    registry.update()
+    system.setup(DEFAULT_SYSTEM_NAME)
+    load_dictionary(os.path.join(os.path.dirname(__file__), 'utf8_dict.py'))
