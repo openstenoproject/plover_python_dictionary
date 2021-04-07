@@ -50,7 +50,7 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ## Release history
 
-### *[unreleased]*
+### 1.0.0
 
 * fix possible encoding issue when loading a dictionary:
   from now on, assume and force UTF-8
