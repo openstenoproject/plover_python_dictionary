@@ -50,7 +50,7 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ## Release history
 
-### [unreleased]
+### 1.1.0
 
 * fix type checks for `lookup` and `reverse_lookup`:
   allow bound methods and functors
