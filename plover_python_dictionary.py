@@ -43,9 +43,13 @@ class PythonDictionary(StenoDictionary):
         return True
 
     def __getitem__(self, key):
+        if len(key) > self._longest_key:
+            raise KeyError
         return self._lookup(key)
 
     def get(self, key, fallback=None):
+        if len(key) > self._longest_key:
+            return fallback
         try:
             return self._lookup(key)
         except KeyError:
