@@ -52,6 +52,7 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ### [unreleased]
 
+* fix `reverse_lookup` implementation: return a set.
 * fix `__getitem__` / `get` implementations:
   when the key length is out of bounds
 * fix `__contains__` implementation
