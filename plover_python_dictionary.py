@@ -33,12 +33,6 @@ class PythonDictionary(StenoDictionary):
         self._longest_key = longest_key
         self._reverse_lookup = reverse_lookup
 
-    def __setitem__(self, key, value):
-        raise NotImplementedError()
-
-    def __delitem__(self, key):
-        raise NotImplementedError()
-
     def __getitem__(self, key):
         return self._lookup(key)
 

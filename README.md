@@ -50,6 +50,11 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ## Release history
 
+### [unreleased]
+
+* fix `__delitem__` / `__setitem__` implementations:
+  raise the correct exception type
+
 ### 1.0.0
 
 * fix possible encoding issue when loading a dictionary:
