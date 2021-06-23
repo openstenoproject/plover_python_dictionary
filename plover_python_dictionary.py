@@ -33,6 +33,15 @@ class PythonDictionary(StenoDictionary):
         self._longest_key = longest_key
         self._reverse_lookup = reverse_lookup
 
+    def __contains__(self, key):
+        if len(key) > self._longest_key:
+            return False
+        try:
+            self._lookup(key)
+        except KeyError:
+            return False
+        return True
+
     def __getitem__(self, key):
         return self._lookup(key)
 

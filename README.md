@@ -52,6 +52,7 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ### [unreleased]
 
+* fix `__contains__` implementation
 * fix `__delitem__` / `__setitem__` implementations:
   raise the correct exception type
 
