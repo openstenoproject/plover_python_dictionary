@@ -1,5 +1,7 @@
 # vim: set fileencoding=utf-8 :
 
+import typing
+
 from plover.steno_dictionary import StenoDictionary
 
 
@@ -23,10 +25,10 @@ class PythonDictionary(StenoDictionary):
         if not isinstance(longest_key, int) or longest_key <= 0:
             raise ValueError('missing or invalid `LONGEST_KEY\' constant: %s\n' % longest_key)
         lookup = mod.get('lookup')
-        if not isinstance(lookup, type(lambda x: x)):
+        if not isinstance(lookup, typing.Callable):
             raise ValueError('missing or invalid `lookup\' function: %s\n' % lookup)
         reverse_lookup = mod.get('reverse_lookup', lambda x: set())
-        if not isinstance(reverse_lookup, type(lambda x: x)):
+        if not isinstance(reverse_lookup, typing.Callable):
             raise ValueError('invalid `reverse_lookup\' function: %s\n' % reverse_lookup)
         self._mod = mod
         self._lookup = lookup

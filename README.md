@@ -52,6 +52,8 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ### [unreleased]
 
+* fix type checks for `lookup` and `reverse_lookup`:
+  allow bound methods and functors
 * fix `reverse_lookup` implementation: return a set.
 * fix `__getitem__` / `get` implementations:
   when the key length is out of bounds

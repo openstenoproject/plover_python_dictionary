@@ -73,3 +73,9 @@ class TestPythonDictionaryWithReverseLookup(TestPythonDictionary):
 def test_utf8_dictionary(monkeypatch):
     monkeypatch.setenv('PYTHONIOENCODING', 'ascii')
     load_dictionary(str(_test_dict_path('utf8')))
+
+
+def test_callable_checks():
+    d = load_dictionary(str(_test_dict_path('callable_checks')))
+    d[('TEFT',)] == 'text'
+    d.reverse_lookup('text') == {('STENO',)}
