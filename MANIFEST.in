@@ -1,4 +1,6 @@
-include test/show_stroke.py
-include test/utf8_dict.py
+include test/conftest.py
+include test/dict_reverse_lookup.py
+include test/dict_show_stroke.py
+include test/dict_utf8.py
 include pyproject.toml
 include tox.ini
