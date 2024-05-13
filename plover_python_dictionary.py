@@ -20,7 +20,7 @@ class PythonDictionary(StenoDictionary):
         with open(filename, encoding='utf-8') as fp:
             source = fp.read()
         mod = {}
-        exec(source, mod)
+        exec(compile(source, filename, 'exec'), mod)
         longest_key = mod.get('LONGEST_KEY')
         if not isinstance(longest_key, int) or longest_key <= 0:
             raise ValueError('missing or invalid `LONGEST_KEY\' constant: %s\n' % longest_key)
