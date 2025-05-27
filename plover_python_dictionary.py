@@ -21,6 +21,7 @@ class PythonDictionary(StenoDictionary):
         self.readonly = True
 
     def _load(self, filename):
+        print(f"Loading {filename}")
         module_name = os.path.splitext(os.path.basename(filename))[0]
 
         spec = importlib.util.spec_from_file_location(module_name, filename)
@@ -47,14 +48,15 @@ class PythonDictionary(StenoDictionary):
         self._lookup = lookup
         self._longest_key = longest_key
         self._reverse_lookup = reverse_lookup
-        def __contains__(self, key):
-            if len(key) > self._longest_key:
-                return False
-            try:
-                self._lookup(key)
-            except KeyError:
-                return False
-            return True
+
+    def __contains__(self, key):
+        if len(key) > self._longest_key:
+            return False
+        try:
+            self._lookup(key)
+        except KeyError:
+            return False
+        return True
 
     def __getitem__(self, key):
         if len(key) > self._longest_key:
