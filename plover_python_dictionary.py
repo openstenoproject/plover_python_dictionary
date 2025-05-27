@@ -1,6 +1,10 @@
 # vim: set fileencoding=utf-8 :
 
 import typing
+import importlib.util
+import sys
+import types
+import os
 
 from plover.steno_dictionary import StenoDictionary
 
@@ -17,32 +21,40 @@ class PythonDictionary(StenoDictionary):
         self.readonly = True
 
     def _load(self, filename):
-        with open(filename, encoding='utf-8') as fp:
-            source = fp.read()
-        mod = {}
-        exec(source, mod)
-        longest_key = mod.get('LONGEST_KEY')
+        module_name = os.path.splitext(os.path.basename(filename))[0]
+
+        spec = importlib.util.spec_from_file_location(module_name, filename)
+        if spec is None or spec.loader is None:
+            raise ImportError(f"Could not load module spec from {filename}")
+
+        mod = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = mod  # Optional but allows re-imports and traceback clarity
+        spec.loader.exec_module(mod)
+
+        longest_key = getattr(mod, 'LONGEST_KEY', None)
         if not isinstance(longest_key, int) or longest_key <= 0:
-            raise ValueError('missing or invalid `LONGEST_KEY\' constant: %s\n' % longest_key)
-        lookup = mod.get('lookup')
+            raise ValueError(f"Missing or invalid `LONGEST_KEY` constant: {longest_key}")
+
+        lookup = getattr(mod, 'lookup', None)
         if not isinstance(lookup, typing.Callable):
-            raise ValueError('missing or invalid `lookup\' function: %s\n' % lookup)
-        reverse_lookup = mod.get('reverse_lookup', lambda x: set())
+            raise ValueError(f"Missing or invalid `lookup` function: {lookup}")
+
+        reverse_lookup = getattr(mod, 'reverse_lookup', lambda x: set())
         if not isinstance(reverse_lookup, typing.Callable):
-            raise ValueError('invalid `reverse_lookup\' function: %s\n' % reverse_lookup)
+            raise ValueError(f"Invalid `reverse_lookup` function: {reverse_lookup}")
+
         self._mod = mod
         self._lookup = lookup
         self._longest_key = longest_key
         self._reverse_lookup = reverse_lookup
-
-    def __contains__(self, key):
-        if len(key) > self._longest_key:
-            return False
-        try:
-            self._lookup(key)
-        except KeyError:
-            return False
-        return True
+        def __contains__(self, key):
+            if len(key) > self._longest_key:
+                return False
+            try:
+                self._lookup(key)
+            except KeyError:
+                return False
+            return True
 
     def __getitem__(self, key):
         if len(key) > self._longest_key:
