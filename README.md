@@ -50,6 +50,10 @@ outputs: `the stroke for "stroke" is STROEBG`.
 
 ## Release history
 
+### 1.2.0
+
+* use importlib instead of exec ([#12](https://github.com/openstenoproject/plover_python_dictionary/pull/12))
+
 ### 1.1.0
 
 * fix type checks for `lookup` and `reverse_lookup`:
