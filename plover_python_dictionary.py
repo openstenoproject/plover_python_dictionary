@@ -22,7 +22,7 @@ class PythonDictionary(StenoDictionary):
     def _load(self, filename): 
         log.info("loading Python dictionary: %s", filename)
         
-        module_name = os.path.splitext(os.path.basename(filename))[0]
+        module_name = filename # include full path
 
         spec = importlib.util.spec_from_file_location(module_name, filename)
         if spec is None or spec.loader is None:
