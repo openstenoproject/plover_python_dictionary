@@ -3,11 +3,10 @@
 import typing
 import importlib.util
 import sys
-import types
 import os
 
 from plover.steno_dictionary import StenoDictionary
-
+from plover import log
 
 class PythonDictionary(StenoDictionary):
 
@@ -20,8 +19,9 @@ class PythonDictionary(StenoDictionary):
         self._reverse_lookup = None
         self.readonly = True
 
-    def _load(self, filename):
-        print(f"Loading {filename}")
+    def _load(self, filename): 
+        log.info("loading Python dictionary: %s", filename)
+        
         module_name = os.path.splitext(os.path.basename(filename))[0]
 
         spec = importlib.util.spec_from_file_location(module_name, filename)
